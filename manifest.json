@@ -1,0 +1,29 @@
+{
+  "manifest_version": 3,
+  "name": "ShortsBlock",
+  "version": "1.0",
+  "permissions": ["declarativeNetRequest"],
+  "host_permissions": ["*://*.youtube.com/*"],
+  "declarative_net_request": {
+    "rule_resources": [
+      {
+        "id": "shorts_ruleset",
+        "enabled": true,
+        "path": "dnr_rules.json"
+      }
+    ]
+  },
+  "web_accessible_resources": [
+  {
+    "resources": ["blocked.html"],
+    "matches": ["*://*.youtube.com/*"]
+  }
+],
+  "content_scripts": [
+    {
+      "run_at": "document_start",
+      "matches": ["*://*.youtube.com/*"],
+      "js": ["content.js"]
+    }
+  ]
+}
