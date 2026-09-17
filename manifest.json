@@ -3,26 +3,27 @@
   "name": "ShortsBlock",
   "version": "1.0",
   "permissions": ["declarativeNetRequest"],
-  "host_permissions": ["*://*.youtube.com/*"],
+  "host_permissions": ["*://*.youtube.com/*", "*://*.instagram.com/*"],
   "declarative_net_request": {
     "rule_resources": [
       {
-        "id": "shorts_ruleset",
+        "id": "block_ruleset",
         "enabled": true,
         "path": "dnr_rules.json"
+        
       }
     ]
   },
   "web_accessible_resources": [
   {
     "resources": ["blocked.html"],
-    "matches": ["*://*.youtube.com/*"]
+    "matches": ["*://*.youtube.com/*", "*://*.instagram.com/*"]
   }
 ],
   "content_scripts": [
     {
       "run_at": "document_start",
-      "matches": ["*://*.youtube.com/*"],
+      "matches": ["*://*.youtube.com/*", "*://*.instagram.com/*"],
       "js": ["content.js"]
     }
   ]
