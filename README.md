@@ -95,7 +95,8 @@ ShortsBlockExtension/
 ├── content.js         # Layer 2: watches the URL inside the page
 ├── dnr_rules.json     # Layer 1: redirect rules for direct navigation
 ├── blocked.html       # The one block page both layers send you to
-└── _metadata/         # Made by Chrome. Ignored by Git
+├── _metadata/         # Made by Chrome. Ignored by Git
+└── assets/            # Demo gifs for ReadMe docs
 ```
 
 ## Install
