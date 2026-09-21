@@ -16,8 +16,8 @@ function checkUrl() {
     }
     if ((lastUrl.includes("/shorts/") || lastUrl.includes("/reels/")) && already_blocked == false) {
         
-        document.documentElement.innerHTML = "<h1>Blocked With Text test</h1>"; //replaces what's already loaded with blocked message (at start)
-        window.stop(); //tells browswer to stop loading anything else
+        //redirect to blocked.html
+        window.location.replace(chrome.runtime.getURL("blocked.html"));
         already_blocked = true;
     }
     else if (!(lastUrl.includes("/shorts/") || lastUrl.includes("/reels/"))) //if any other links
